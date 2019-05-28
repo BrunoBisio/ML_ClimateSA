@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import model.Constelation;
 import model.Planet;
 import model.PrecipitationReport;
+import service.definition.ClimateService;
+import service.impl.ClimateServiceImpl;
 
 @RunWith(SpringRunner.class)
 public class ClimateServiceTest {

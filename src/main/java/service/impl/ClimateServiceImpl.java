@@ -1,4 +1,4 @@
-package service;
+package service.impl;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,6 +12,7 @@ import customUtils.geoUtils;
 import model.Constelation;
 import model.Position;
 import model.PrecipitationReport;
+import service.definition.ClimateService;
 
 @Service
 public class ClimateServiceImpl implements ClimateService {
@@ -30,9 +31,8 @@ public class ClimateServiceImpl implements ClimateService {
         public String getValue() {
             return this.value;
         }
-    }
-
-
+    };
+    
     // obtener reporte de clima de una constelación hasta una fecha
     @Override
     public HashMap<String, Long> getClimateReportUntil(Constelation constelation, String date) {

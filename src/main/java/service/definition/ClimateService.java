@@ -1,4 +1,4 @@
-package service;
+package service.definition;
 
 import java.time.LocalDate;
 import java.util.HashMap;
