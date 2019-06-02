@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Program<gs-spring-boot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "main.Program",
+            "projectName": "gs-spring-boot",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<gs-spring-boot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "climate.Main",
+            "projectName": "gs-spring-boot",
+            "args": ""
+        }
+    ]
+}

@@ -1,2 +1,2 @@
-service\ClimateServiceTest$ClimateServiceImplTestContextConfiguration.class
-service\ClimateServiceTest.class
+climate\service\ClimateServiceTest.class
+climate\service\ClimateServiceTest$ClimateServiceImplTestContextConfiguration.class
