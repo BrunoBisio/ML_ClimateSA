@@ -40,20 +40,24 @@ public class ClimateReportTasks {
     }
     */
     // @Scheduled(cron = "0 0 21 * * *")
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedDelay = 600000)
     public void fillClimateReports() {
         log.info("llenado de base de datos");
         List<ClimateReport> climateReports = new LinkedList<>();
         ClimateReport cr = climateReportRepo.findTopByOrderByDateDesc();
         Constelation constelation = constelationRepo.findFirstById(0);
-        try {
-            Constelation constelation2 = new Constelation(constelation);
-            LocalDate date = cr != null ? cr.getDate().plusDays(1) : LocalDate.now();
-            climateReports = climateReportServ.getClimateReportBetween(constelation2, date, date.plusDays(90));
-            climateReportRepo.saveAll(climateReports);
-        } catch (Exception ex) {
-            log.error("No se pudo actualizar la base de datos: " + ex.getMessage(), (Object[])ex.getStackTrace());
+        if (constelation != null) {
+            try {
+                Constelation constelationCopy = new Constelation(constelation);
+                LocalDate date = cr != null ? cr.getDate().plusDays(1) : LocalDate.now();
+                climateReports = climateReportServ.getClimateReportBetween(constelationCopy, date, date.plusDays(90));
+                climateReportRepo.saveAll(climateReports);
+            } catch (Exception ex) {
+                log.error("No se pudo actualizar la base de datos: " + ex.getMessage(), (Object[])ex.getStackTrace());
+            }
+            log.info("se actualizo la base de datos satisfactoriamente");
+        } else {
+            log.error("No se encontro una constelacion sobre la que se pueda trabajar");
         }
-        log.info("se actualizo la base de datos satisfactoriamente");
     }
 }
