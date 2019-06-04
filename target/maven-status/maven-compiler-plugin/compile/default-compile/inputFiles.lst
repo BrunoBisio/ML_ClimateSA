@@ -8,6 +8,7 @@ C:\Projects\ClimateSA\src\main\java\climate\controller\ClimateReportController.j
 C:\Projects\ClimateSA\src\main\java\climate\utils\PositionUtils.java
 C:\Projects\ClimateSA\src\main\java\climate\Main.java
 C:\Projects\ClimateSA\src\main\java\climate\model\Constelation.java
+C:\Projects\ClimateSA\src\main\java\climate\repository\ConstelationRepository.java
 C:\Projects\ClimateSA\src\main\java\climate\service\impl\ClimateReportServiceImpl.java
 C:\Projects\ClimateSA\src\main\java\climate\constants\Climate.java
 C:\Projects\ClimateSA\src\main\java\climate\model\PrecipitationReport.java

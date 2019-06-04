@@ -14,6 +14,14 @@ public class Position {
     private double x;
     private double y;
     
+    public Position() {
+    }
+
+    public Position (Position p){
+        this.x = p.getX();
+        this.y = p.getY();
+    }
+
     public Position (double x, double y) {
         this.x = x;
         this.y = y;
@@ -22,6 +30,10 @@ public class Position {
     public void update (double x, double y) {
         this.x = x;
         this.y = y;
+    }
+
+    public long getId() {
+        return this.id;
     }
 
     public double getX() {

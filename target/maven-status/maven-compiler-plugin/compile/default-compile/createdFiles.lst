@@ -12,4 +12,5 @@ climate\model\Constelation.class
 climate\constants\Climate.class
 climate\service\definition\ClimateService.class
 climate\utils\PositionUtils.class
+climate\repository\ConstelationRepository.class
 climate\controller\ClimateReportController.class

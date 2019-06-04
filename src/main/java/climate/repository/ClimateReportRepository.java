@@ -9,6 +9,6 @@ import climate.model.ClimateReport;
 public interface ClimateReportRepository extends CrudRepository<ClimateReport, Long>{
 
     ClimateReport findByDate(LocalDate date);
-
-    ClimateReport findById(long id);
+    
+    ClimateReport findTopByOrderByDateDesc();
 }

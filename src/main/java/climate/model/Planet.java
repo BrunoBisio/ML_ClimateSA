@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Planet implements Cloneable {
+public class Planet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,14 +21,13 @@ public class Planet implements Cloneable {
     public Planet() {
     }
 
-    public String getName() {
-        return name;
+    public Planet(Planet p) {
+        this.velocity = p.getVelocity();
+        this.distance = p.getDistance();
+        this.name = p.getName();
+        this.position = new Position(p.position);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    
     public Planet(double v, long d, double x, double y) {
         this.velocity = v;
         this.distance = d;
@@ -37,6 +36,14 @@ public class Planet implements Cloneable {
 
     public long getId() {
         return this.id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getVelocity(){
@@ -66,12 +73,8 @@ public class Planet implements Cloneable {
             this.position.update(x,y);
         }
     }
-
-    public Object clone() throws CloneNotSupportedException { 
-        return super.clone(); 
-    }
-
-	public void update(double day) {
+    
+    public void update(double day) {
         double angle = Math.toRadians(velocity * day);
         double x = this.position.getX() + distance * Math.cos(angle);
         double y = this.position.getY() + distance * Math.sin(angle);

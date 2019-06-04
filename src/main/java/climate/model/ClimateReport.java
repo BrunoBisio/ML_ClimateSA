@@ -25,7 +25,7 @@ public class ClimateReport {
     }
 
     public LocalDate getDate() {
-        return date;
+        return this.date;
     }
 
     public String getWeather() {
@@ -38,5 +38,9 @@ public class ClimateReport {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public long getId() {
+        return this.id;
     }
 }

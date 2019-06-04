@@ -11,4 +11,7 @@ public interface ClimateReportService {
     public ClimateReport getClimateReport(long day, Constelation constelation) throws Exception;
 
     public List<ClimateReport> getClimateReportBetween(Constelation constelation, LocalDate dateFrom, LocalDate dateTo) throws Exception;
+
+    public ClimateReport retrieveClimateReport(Integer day);
+    
 }

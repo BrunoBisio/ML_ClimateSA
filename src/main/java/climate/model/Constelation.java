@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.OrderColumn;
 
 @Entity
-public class Constelation implements Cloneable {
+public class Constelation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,9 +22,24 @@ public class Constelation implements Cloneable {
     @OneToOne
     private Planet sun;
    
+    public Constelation() {
+    }
+
     public Constelation(int n) {
         this.planets = new Planet[n];
         this.sun = new Planet();
+    }
+
+    public Constelation(Constelation c) {
+        this.planets = new Planet[c.getPlanets().length];
+        for (int i = 0; i < c.getPlanets().length; i++){
+            this.planets[i] = new Planet(c.getPlanets()[i]);
+        }
+        this.sun = new Planet(c.getSun());
+    }
+
+    public long getId() {
+        return this.id;
     }
 
     public Planet[] getPlanets() {
@@ -52,8 +67,4 @@ public class Constelation implements Cloneable {
             planets[i].update(day);
         }
     }
-
-    public Object clone() throws CloneNotSupportedException { 
-        return super.clone(); 
-    } 
 }
